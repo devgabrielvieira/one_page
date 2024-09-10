@@ -1,0 +1,150 @@
+<!-- {% block title  %}Voip{% endblock %} -->
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="pt-br">  <!-- Caso queira colocar em tema dark, basta inclur esta tag data-bs-theme="dark" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voip</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            /* font-family: Arial, sans-serif; */
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 60px;
+            height: 100vh;
+        }
+
+        /* .section-1 { background-color: #f4f4f4; } */
+        /* .section-2 { background-color: #333; color: #fff; } */
+        /* .section-3 { background-color: #eee; } */
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        align-items-center {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-1">
+        <h1 class="text-center mb-3">MCM Informática</h1>
+        <br>
+        <div class="text-nowrap bd-highlight" style="width: 8rem;">
+            <h2>🔊 5 Vantagens da Telefonia VoIP para Sua Empresa! 📞</h2>
+            <br>
+            <p>Você já considerou implementar a telefonia VoIP no seu negócio? Na MCM Outsourcing, sabemos o quanto a
+                tecnologia certa pode transformar sua empresa.</p>
+            <p>Aqui estão cinco vantagens da telefonia VoIP que podem impulsionar sua produtividade e reduzir custos:
+            </p>
+
+            <p><strong>* Redução de Custos 📉&nbsp:</strong>&nbspLigações mais baratas, especialmente para longas
+                distâncias, com tarifas muito menores que as das linhas telefônicas tradicionais.</p>
+            <p><strong>* Flexibilidade📱&nbsp:</strong>&nbspFaça e receba chamadas de qualquer lugar, usando
+                dispositivos conectados à internet, seja um smartphone, tablet ou computador.</p>
+            <p><strong>* Escalabilidade 📈&nbsp:</strong>&nbspAdicione ou remova linhas conforme a necessidade, sem a
+                complexidade de uma infraestrutura física adicional.</p>
+            <p><strong>* Funcionalidades Avançadas 🌐&nbsp:</strong>&nbspAcesso a recursos como correio de voz, chamadas
+                em conferência, gravação de chamadas e encaminhamento automático, tudo integrado em um só sistema.</p>
+            <p><strong>* Integração com Outros Sistemas 🔄&nbsp:</strong>&nbspConecte facilmente com outras ferramentas
+                de comunicação e software de gestão, melhorando a eficiência do seu fluxo de trabalho.</p>
+
+            <p>Na MCM Outsourcing, estamos aqui para ajudar sua empresa a tirar o máximo proveito das novas tecnologias.
+            </p>
+            <p>Quer saber mais sobre como a telefonia VoIP pode beneficiar seu negócio?</p>
+            <br>
+            <h6 class="mb-0">Entre em contato conosco!&nbsp<i class="bi bi-whatsapp fs-4 align-middle"></i>&nbsp<i
+                    class="bi bi-phone fs-4 align-middle"></i>&nbsp<i class="bi bi-envelope-at fs-4 align-middle"></i>
+            </h6>
+        </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col mx-auto text-center">
+                    <img src="{% static 'main/voip.png' %}" alt="ImgVoip" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="section-2"> -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-3"><i
+                    class="bi bi-clipboard-check fs-4 align-middle"></i>&nbspFormulário de Inscrição</h2>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary"><i
+                    class="bi bi-box-arrow-in-right fs-4 align-middle"></i>&nbspEnviar</button>
+        </form>
+        {% if form.errors %}
+        <div class="alert alert-danger mt-4">
+            <ul class="mb-0">
+                {% for field in form %}
+                {% for error in fild.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <!-- </section> -->
+    </div>
+
+
+    <!-- <section class="section-3"> -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-3">Contato</h2>
+            <h6 class="text-center mb-3">&nbspVictor - MCM Informática</h6>
+            <!-- <h6 class="text-center mb-3"><i class="bi bi-emoji-smile fs-4 align-middle"></i>&nbspVictor - MCM Informática</h6> -->
+            <h6 class="text-center mb-3"><i class="bi bi-whatsapp fs-4 align-middle"></i>&nbsp(21) 98464-9873</h6>
+            <h6 class="text-center mb-3"><i
+                    class="bi bi-envelope-at fs-4 align-middle"></i>&nbspvictormenezes@outlook.com</h6>
+            <!-- </section> -->
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock %}
