@@ -1,3 +1,4 @@
+
 <!-- {% block title  %}Voip{% endblock %} -->
 {% load static %}
 
@@ -27,11 +28,11 @@
 
         section {
             padding: 60px;
-            height: 90vh;
+            height: 100vh;
         }
 
-        .section-1 { background-color: #eee; }
-        .section-2 { background-color: #333; color: #eee; }
+        .section-1 { background-color: #f4f4f4; }
+        .section-2 { background-color: #333; color: #fff; }
         .section-3 { background-color: #eee; }
 
         form {
@@ -60,7 +61,7 @@
 
 <body>
         <section class="section-1">
-            <div class="container"></div>
+            <div class="container-fluid"></div>
         <h1 class="text-center mb-3">MCM Informática</h1>
         <br>
         <div>
@@ -86,12 +87,14 @@
             </p>
             <p>Quer saber mais sobre como a telefonia VoIP pode beneficiar seu negócio?</p>
             <br>
+            <div class="container-fluid">
             <h6 class="mb-0">Entre em contato conosco!&nbsp<i class="bi bi-whatsapp fs-4 align-middle"></i>&nbsp<i
                     class="bi bi-phone fs-4 align-middle"></i>&nbsp<i class="bi bi-envelope-at fs-4 align-middle"></i>
             </h6>
+        </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container-fluid">
             <!-- <div class="row align-items-center"> -->
                 <div class="col mx-auto text-center">
                     <img src="{% static 'main/voip.png' %}" alt="ImgVoip" class="img-fluid">
@@ -102,6 +105,7 @@
     </section>
 
     <section class="section-2">
+    <div class="container-fluid">
     <div class="card">
         <div class="card-body">
             <h2 class="card-title text-center mb-3"><i
@@ -126,12 +130,15 @@
                 {% endfor %}
             </ul>
         </div>
+    
         {% endif %}
         </section>
     </div>
+</div>
 
 
     <section class="section-3">
+    <div class="container-fluid">
     <div class="card">
         <div class="card-body">
             <h2 class="card-title text-center mb-3">Contato</h2>
@@ -143,7 +150,7 @@
             </section>
         </div>
     </div>
-
+</div>
 </body>
 
 </html>
