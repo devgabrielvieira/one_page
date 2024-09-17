@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render
 from . forms import ClientForm
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 def home(request):
     if request.method == 'POST':
         form = ClientForm(request.POST)
