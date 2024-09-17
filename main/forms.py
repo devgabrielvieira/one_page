@@ -17,5 +17,5 @@ class ClientForm(forms.ModelForm):
             'nome_completo': 'Nome completo',
             'email': 'Email',
             'telefone': 'Telefone',
-            'cpf': 'CPF',
+            'cpf': 'CPF/CNPJ',
         }
